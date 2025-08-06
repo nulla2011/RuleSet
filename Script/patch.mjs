@@ -5,7 +5,7 @@ import {parse, stringify} from "yaml";
 const main = (site) => {
   let rule, rm, shared
   try {
-    rule = parse(readFileSync(`../temp/${site}.yaml`, "utf8"));
+    rule = parse(readFileSync(`../Temp/${site}.yaml`, "utf8"));
     if (existsSync(`../Patches/Remove/${site}.yaml`)){
       rm = parse(readFileSync(`../Patches/Remove/${site}.yaml`, "utf8"));
     }
