@@ -4,7 +4,7 @@ import {parse, stringify} from "yaml";
 const main = () => {
   let rules, add, rm, shared
   try {
-    rules = parse(readFileSync(`../Temp/Proxy.yaml`, "utf8"));
+    rules = parse(readFileSync(`../Temp/Proxy_Classical.yaml`, "utf8"));
     add = parse(readFileSync(`../Patches/Add/Proxy.yaml`, "utf8"));
     shared = parse(readFileSync(`../Patches/Remove/Shared.yaml`, "utf8"));
   }
