@@ -4,7 +4,7 @@ import {parse, stringify} from "yaml";
 const main = () => {
   let OpenAIRules, GeminiRules, rm, shared
   try {
-    OpenAIRules = parse(readFileSync(`../Temp/OpenAi.yaml`, "utf8"));
+    OpenAIRules = parse(readFileSync(`../Temp/OpenAI.yaml`, "utf8"));
     GeminiRules = {payload: parse(readFileSync(`../Patches/Add/Gemini.yaml`, "utf8"))};
     rm = parse(readFileSync(`../Patches/Remove/AI.yaml`, "utf8"));
     shared = parse(readFileSync(`../Patches/Remove/Shared.yaml`, "utf8"));
