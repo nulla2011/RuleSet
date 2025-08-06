@@ -14,8 +14,8 @@ const main = (site) => {
   catch (e) {
     console.error(e)
   }
-  rules.payload = rules.payload.filter((r)=> !rm.some((e)=> r.includes(e)))
-  rules.payload = rules.payload.filter((r)=> !shared.some((e)=> r.includes(e)))
+  rules.payload = rules.payload.filter(r=> !rm.some(e => r.includes(e)))
+  rules.payload = rules.payload.filter(r=> !shared.some(e => r.includes(e)))
   try {
     writeFileSync(`../Rules/${site}.yaml`, stringify(rules), "utf8");
   }

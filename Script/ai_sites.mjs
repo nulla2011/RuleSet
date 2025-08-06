@@ -14,8 +14,8 @@ const main = () => {
     console.error(e)
   }
   const rules = {payload: OpenAIRules.payload.concat(GeminiRules.payload).concat(ClaudeRules.payload)}
-  rules.payload = rules.payload.filter((r)=> !rm.some((e)=> r.includes(e)))
-  rules.payload = rules.payload.filter((r)=> !shared.some((e)=> r.includes(e)))
+  rules.payload = rules.payload.filter(r => !rm.some(e => r.includes(e)))
+  rules.payload = rules.payload.filter(r => !shared.some(e => r.includes(e)))
   try {
     writeFileSync(`../Rules/AI.yaml`, stringify(rules), "utf8");
   }
