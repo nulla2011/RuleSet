@@ -1,0 +1,47 @@
+name: get-new-commits-then-update.yml
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:       # 可选手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-patch:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    env:
+        RULE_LIST: "AbemaTV Bahamut Niconico Spotify YouTube"
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm install
+      - name: Fetch File
+        run: |
+          mkdir Temp
+          cd Temp
+                    
+          for name in $RULE_LIST; do
+            curl -O "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/$name/$name.yaml"
+          done
+      - name: Patch File
+        run: |
+          cd Script
+          for name in $RULE_LIST; do
+            node patch.mjs $name
+          done
+      - name: Commit & Push
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git commit -m "Update"
+          git push
