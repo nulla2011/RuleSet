@@ -2,7 +2,7 @@ import { writeFileSync } from "fs";
 import https from "https";
 import { parse, stringify } from "yaml";
 
-const REMOVE_RULES = ['\U0001F3AC 国际流媒体', '\U0001F3AC 大陆流媒体国际版', '\U0001F3AE 游戏平台', '\U0001F3AC 大陆流媒体']
+const REMOVE_RULES = ['🎬 国际流媒体', '🎬 大陆流媒体国际版', '🎮 游戏平台', '🎬 大陆流媒体']
 
 const data = new Promise((resolve, reject) => {
   https.get(process.env.SUB_URL, (res) => {
@@ -89,28 +89,28 @@ const main = async () => {
       type: 'http',
       behavior: 'classical',
       path: './ruleset/AI.yaml',
-      url: 'https://gcore.jsdelivr.net/gh/nulla2011/ruleset@master/rules/AI.yaml',
+      url: 'https://gcore.jsdelivr.net/gh/nulla2011/ruleset@master/Rules/AI.yaml',
       interval: 86400,
     },
     JP: {
       type: 'http',
       behavior: 'classical',
       path: './ruleset/JP.yaml',
-      url: 'https://gcore.jsdelivr.net/gh/nulla2011/ruleset@master/rules/JP.yaml',
+      url: 'https://gcore.jsdelivr.net/gh/nulla2011/ruleset@master/Rules/JP.yaml',
       interval: 86400,
     },
     DirectEx: {
       type: 'http',
       behavior: 'classical',
-      path: './ruleset/AI.yaml',
-      url: 'https://gcore.jsdelivr.net/gh/nulla2011/ruleset@master/rules/DirectEx.yaml',
+      path: './ruleset/DirectEx.yaml',
+      url: 'https://gcore.jsdelivr.net/gh/nulla2011/ruleset@master/Rules/DirectEx.yaml',
       interval: 86400,
     },
     AdobeBan: {
       type: 'http',
       behavior: 'classical',
-      path: './ruleset/AI.yaml',
-      url: 'https://gcore.jsdelivr.net/gh/nulla2011/ruleset@master/rules/Adobe_ban.yaml',
+      path: './ruleset/AdobeBan.yaml',
+      url: 'https://gcore.jsdelivr.net/gh/nulla2011/ruleset@master/Rules/Adobe_ban.yaml',
       interval: 86400,
     }
   })
@@ -161,6 +161,7 @@ const main = async () => {
   config.rules.unshift('RULE-SET,AI,AI');
   config.rules.unshift('RULE-SET,JP,JP');
   config.rules.unshift('RULE-SET,AdobeBan,REJECT');
+  config.rules.unshift('RULE-SET,DirectEx,DIRECT');
 
   writeFileSync('C:/users/nulla/desktop/d61638864fd63165', stringify(config), 'utf-8')
 }
