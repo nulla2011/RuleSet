@@ -16,7 +16,7 @@ const main = () => {
   rules.payload = rules.payload.filter((r)=> !rm.some((e)=> r.includes(e)))
   rules.payload = rules.payload.filter((r)=> !shared.some((e)=> r.includes(e)))
   try {
-    writeFileSync(`../Rules/${site}.yaml`, stringify(rule), "utf8");
+    writeFileSync(`../Rules/AI.yaml`, stringify(rule), "utf8");
   }
   catch (e) {
     console.error(e)
