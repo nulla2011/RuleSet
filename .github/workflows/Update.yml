@@ -1,7 +1,7 @@
-name: get-new-commits-then-update.yml
+name: Update
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 8 * * *'
   workflow_dispatch:       # 可选手动触发
 
 permissions:
@@ -32,16 +32,18 @@ jobs:
           for name in $RULE_LIST; do
             curl -O "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/$name/$name.yaml"
           done
+          curl -O "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.yaml"
       - name: Patch File
         run: |
           cd Script
           for name in $RULE_LIST; do
             node patch.mjs $name
           done
+          node ai_sites.mjs
       - name: Commit & Push
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          git commit -m "Update"
+          git commit -m "Bot Update"
           git push
