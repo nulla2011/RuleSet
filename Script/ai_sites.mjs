@@ -4,7 +4,7 @@ import { parse, stringify } from "yaml";
 const main = () => {
   let rules, rm, shared
   try {
-    rules = { payload: readFileSync('../Temp/ai.conf', 'utf-8').split('\n').filter(t => !t.startsWith('#')) }
+    rules = { payload: readFileSync('../Temp/ai.txt', 'utf-8').split('\n').filter(t => !t.startsWith('#')) }
     rm = parse(readFileSync(`../Patches/Remove/AI.yaml`, "utf8"));
     shared = parse(readFileSync(`../Patches/Remove/Shared.yaml`, "utf8"));
   }
