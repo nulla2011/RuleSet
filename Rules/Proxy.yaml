@@ -1111,8 +1111,6 @@ payload:
   - DOMAIN-SUFFIX,cloud.cupronickel.goog
   - DOMAIN-SUFFIX,cloudcone.com
   - DOMAIN-SUFFIX,cloudflare-ipfs.com
-  - DOMAIN-SUFFIX,cloudflare.com
-  - DOMAIN-SUFFIX,cloudfront.net
   - DOMAIN-SUFFIX,cloudfunctions.net
   - DOMAIN-SUFFIX,cloudgarage.jp
   - DOMAIN-SUFFIX,cloudmagic.com
@@ -2789,7 +2787,6 @@ payload:
   - DOMAIN-SUFFIX,io.io
   - DOMAIN-SUFFIX,iownyour.biz
   - DOMAIN-SUFFIX,iownyour.org
-  - DOMAIN-SUFFIX,ip.sb
   - DOMAIN-SUFFIX,ipaddress.com
   - DOMAIN-SUFFIX,ipalter.com
   - DOMAIN-SUFFIX,ipdefenseforum.com
@@ -2969,7 +2966,6 @@ payload:
   - DOMAIN-SUFFIX,jpopforum.net
   - DOMAIN-SUFFIX,jqueryui.com
   - DOMAIN-SUFFIX,js.revsci.net
-  - DOMAIN-SUFFIX,jsdelivr.net
   - DOMAIN-SUFFIX,jshell.net
   - DOMAIN-SUFFIX,jshint.com
   - DOMAIN-SUFFIX,jtvnw.net
@@ -3862,7 +3858,6 @@ payload:
   - DOMAIN-SUFFIX,nordvpn.com
   - DOMAIN-SUFFIX,nos.nl
   - DOMAIN-SUFFIX,notepad-plus-plus.org
-  - DOMAIN-SUFFIX,notion.so
   - DOMAIN-SUFFIX,nottinghampost.com
   - DOMAIN-SUFFIX,novafile.com
   - DOMAIN-SUFFIX,novelasia.com
@@ -4299,7 +4294,6 @@ payload:
   - DOMAIN-SUFFIX,powerpointninja.com
   - DOMAIN-SUFFIX,pp.ru
   - DOMAIN-SUFFIX,pp.ua
-  - DOMAIN-SUFFIX,ppy.sh
   - DOMAIN-SUFFIX,prayforchina.net
   - DOMAIN-SUFFIX,prcleader.org
   - DOMAIN-SUFFIX,premeforwindows7.com
@@ -4491,7 +4485,6 @@ payload:
   - DOMAIN-SUFFIX,realsexpass.com
   - DOMAIN-SUFFIX,reason.com
   - DOMAIN-SUFFIX,rebatesrule.net
-  - DOMAIN-SUFFIX,recaptcha.net
   - DOMAIN-SUFFIX,recordhistory.org
   - DOMAIN-SUFFIX,recovery.org.tw
   - DOMAIN-SUFFIX,recoveryversion.com.tw
