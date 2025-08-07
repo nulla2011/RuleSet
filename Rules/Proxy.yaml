@@ -4983,12 +4983,10 @@ payload:
   - DOMAIN-SUFFIX,ssrshare.us
   - DOMAIN-SUFFIX,ssrtool.com
   - DOMAIN-SUFFIX,sss.camp
-  - DOMAIN-SUFFIX,sstatic.net
   - DOMAIN-SUFFIX,sstm.moe
   - DOMAIN-SUFFIX,sstmlt.moe
   - DOMAIN-SUFFIX,sstmlt.net
   - DOMAIN-SUFFIX,st.luluku.pw
-  - DOMAIN-SUFFIX,stackoverflow.com
   - DOMAIN-SUFFIX,stage64.hk
   - DOMAIN-SUFFIX,standard.co.uk
   - DOMAIN-SUFFIX,standupfortibet.org
@@ -6633,3 +6631,5 @@ payload:
   - IP-CIDR6,2a0a:f280::/32
   - DOMAIN-SUFFIX,steamcommunity.com
   - DOMAIN-SUFFIX,asmr.one
+  - DOMAIN-SUFFIX,clipdrop.co
+  - DOMAIN-SUFFIX,openart.ai
