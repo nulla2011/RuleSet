@@ -15,7 +15,6 @@ jobs:
         node-version: [20.x]
     env:
         RULE_LIST: "AbemaTV Bahamut Niconico Spotify YouTube TikTok"
-        AI_RULE_LIST: "OpenAI Claude"
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -34,9 +33,7 @@ jobs:
           for name in $RULE_LIST; do
             curl -O "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/$name/$name.yaml"
           done
-          for name in $AI_RULE_LIST; do
-            curl -O "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/$name/$name.yaml"
-          done
+          curl -O "https://ruleset.skk.moe/Clash/non_ip/ai.conf"
       - name: Patch File
         run: |
           cd Script
