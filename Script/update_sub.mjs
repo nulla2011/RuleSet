@@ -89,28 +89,28 @@ const main = async () => {
       type: 'http',
       behavior: 'classical',
       path: './ruleset/AI.yaml',
-      url: 'https://gcore.jsdelivr.net/gh/nulla2011/ruleset@master/Rules/AI.yaml',
+      url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/AI.yaml',
       interval: 86400,
     },
     JP: {
       type: 'http',
       behavior: 'classical',
       path: './ruleset/JP.yaml',
-      url: 'https://gcore.jsdelivr.net/gh/nulla2011/ruleset@master/Rules/JP.yaml',
+      url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/JP.yaml',
       interval: 86400,
     },
     DirectEx: {
       type: 'http',
       behavior: 'classical',
       path: './ruleset/DirectEx.yaml',
-      url: 'https://gcore.jsdelivr.net/gh/nulla2011/ruleset@master/Rules/DirectEx.yaml',
+      url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/DirectEx.yaml',
       interval: 86400,
     },
     AdobeBan: {
       type: 'http',
       behavior: 'classical',
       path: './ruleset/AdobeBan.yaml',
-      url: 'https://gcore.jsdelivr.net/gh/nulla2011/ruleset@master/Rules/Adobe_ban.yaml',
+      url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/Adobe_ban.yaml',
       interval: 86400,
     }
   })
