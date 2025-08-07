@@ -121,7 +121,7 @@ const main = async () => {
   config['proxy-groups'].splice(5, 0, {
     name: 'AI',
     type: 'select',
-    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), '➡️ 直接连接'],
+    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), ...proxiesNameFilter('🇺🇸'), '➡️ 直接连接'],
   });
   config['proxy-groups'].splice(3, 0, {
     name: 'ニコニコ',

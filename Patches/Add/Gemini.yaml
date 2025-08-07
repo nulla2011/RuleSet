@@ -1,5 +1,3 @@
 - DOMAIN-SUFFIX,gemini.google.com
 - DOMAIN-SUFFIX,aistudio.google.com
-- DOMAIN,ogads-pa.clients6.google.com
-- DOMAIN,waa-pa.clients6.google.com
-- DOMAIN,signaler-pa.clients6.google.com
+- DOMAIN-SUFFIX,ai.google.dev
