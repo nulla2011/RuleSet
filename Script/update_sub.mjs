@@ -43,10 +43,10 @@ const main = async () => {
   ];
   config.dns['use-system-hosts'] = true;
   Object.assign(config['rule-providers'], {
-    global: {
+    Global: {
       type: 'http',
       behavior: 'classical',
-      path: './ruleset/global.yaml',
+      path: './ruleset/Global.yaml',
       url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/Proxy.yaml',
       interval: 86400,
     },
