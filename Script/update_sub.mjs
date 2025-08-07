@@ -112,52 +112,65 @@ const main = async () => {
       path: './ruleset/AdobeBan.yaml',
       url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/Adobe_ban.yaml',
       interval: 86400,
+    },
+    TikTok: {
+      type: 'http',
+      behavior: 'classical',
+      path: './ruleset/StreamingMedia/Video/TikTok.yaml',
+      url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/TikTok.yaml',
+      interval: 86400,
     }
   })
   config['proxy-groups'] = config['proxy-groups'].filter(e => !REMOVE_RULES.includes(e.name))
   config.rules = config.rules.filter(e => !REMOVE_RULES.some(r => e.includes(r)))
   const { GlobalMedia, AsianMedia, Game, ChinaMedia, ...rest } = config['rule-providers']
   config['rule-providers'] = rest
-  config['proxy-groups'].splice(5, 0, {
-    name: 'AI',
+  config['proxy-groups'].splice(2, 0, {
+    name: 'JP',
     type: 'select',
-    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), ...proxiesNameFilter('🇺🇸'), '➡️ 直接连接'],
+    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵')],
   });
-  config['proxy-groups'].splice(3, 0, {
-    name: 'ニコニコ',
-    type: 'select',
-    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), '➡️ 直接连接'],
-  });
-  config['proxy-groups'].splice(6, 0, {
+  config['proxy-groups'].splice(2, 0, {
     name: 'AbemaTV',
     type: 'select',
-    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), '➡️ 直接连接'],
+    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵')],
   });
-  config['proxy-groups'].splice(7, 0, {
+  config['proxy-groups'].splice(2, 0, {
     name: 'Bahamut',
     type: 'select',
     proxies: ['🌐 国外流量', ...proxiesNameFilter('🇹🇼'), '➡️ 直接连接'],
   });
-  config['proxy-groups'].splice(4, 0, {
-    name: 'YouTube',
+  config['proxy-groups'].splice(2, 0, {
+    name: 'TikTok',
     type: 'select',
-    proxies: ['🌐 国外流量', ...proxiesNameFilter(''), '➡️ 直接连接'],
+    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), ...proxiesNameFilter('🇺🇸'), '➡️ 直接连接'],
   });
-  config['proxy-groups'].splice(6, 0, {
+  config['proxy-groups'].splice(2, 0, {
+    name: 'ニコニコ',
+    type: 'select',
+    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵')],
+  });
+  config['proxy-groups'].splice(2, 0, {
     name: 'Spotify',
     type: 'select',
     proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), '➡️ 直接连接'],
   });
-  config['proxy-groups'].splice(11, 0, {
-    name: 'JP',
+  config['proxy-groups'].splice(2, 0, {
+    name: 'YouTube',
     type: 'select',
-    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), '➡️ 直接连接'],
+    proxies: ['🌐 国外流量', ...proxiesNameFilter('')],
+  });
+  config['proxy-groups'].splice(2, 0, {
+    name: 'AI',
+    type: 'select',
+    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), ...proxiesNameFilter('🇺🇸'), '➡️ 直接连接'],
   });
   config.rules.unshift('RULE-SET,Niconico,ニコニコ');
   config.rules.unshift('RULE-SET,AbemaTV,AbemaTV');
   config.rules.unshift('RULE-SET,Bahamut,Bahamut');
   config.rules.unshift('RULE-SET,Spotify,Spotify');
   config.rules.unshift('RULE-SET,YouTube,YouTube');
+  config.rules.unshift('RULE-SET,TikTok,TikTok');
   config.rules.unshift('RULE-SET,AI,AI');
   config.rules.unshift('RULE-SET,JP,JP');
   config.rules.unshift('RULE-SET,AdobeBan,REJECT');
