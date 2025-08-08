@@ -46,6 +46,8 @@ export const patchProfile = (config) => {
     '8.8.8.8#🌐 国外流量',
     '1.1.1.1#🌐 国外流量',
   ];
+  config.dns['nameserver-policy']['rule-set:Direct,China'] = config.dns['nameserver-policy']['rule-set:Direct,ChinaMedia,China']
+  delete config.dns['nameserver-policy']['rule-set:Direct,ChinaMedia,China']
   config.dns['use-system-hosts'] = true;
   Object.assign(config['rule-providers'], {
     Global: {
@@ -90,6 +92,13 @@ export const patchProfile = (config) => {
       url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/YouTube.yaml',
       interval: 86400,
     },
+    TikTok: {
+      type: 'http',
+      behavior: 'classical',
+      path: './RuleSet/StreamingMedia/Video/TikTok.yaml',
+      url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/TikTok.yaml',
+      interval: 86400,
+    },
     AI: {
       type: 'http',
       behavior: 'classical',
@@ -118,68 +127,75 @@ export const patchProfile = (config) => {
       url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/Adobe_ban.yaml',
       interval: 86400,
     },
-    TikTok: {
+    BlockChina: {
       type: 'http',
       behavior: 'classical',
-      path: './RuleSet/StreamingMedia/Video/TikTok.yaml',
-      url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/TikTok.yaml',
+      path: './RuleSet/BlockChina.yaml',
+      url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/Block_China.yaml',
       interval: 86400,
-    }
+    },
   })
   config['proxy-groups'] = config['proxy-groups'].filter(e => !REMOVE_RULES.includes(e.name))
   config.rules = config.rules.filter(e => !REMOVE_RULES.some(r => e.includes(r)))
   const { GlobalMedia, AsianMedia, Game, ChinaMedia, ...rest } = config['rule-providers']
   config['rule-providers'] = rest
-  config['proxy-groups'].splice(2, 0, {
-    name: 'JP',
-    type: 'select',
-    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵')],
-  });
-  config['proxy-groups'].splice(2, 0, {
-    name: 'AbemaTV',
-    type: 'select',
-    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵')],
-  });
-  config['proxy-groups'].splice(2, 0, {
-    name: 'Bahamut',
-    type: 'select',
-    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇹🇼'), '➡️ 直接连接'],
-  });
-  config['proxy-groups'].splice(2, 0, {
-    name: 'TikTok',
-    type: 'select',
-    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), ...proxiesNameFilter('🇺🇸'), '➡️ 直接连接'],
-  });
-  config['proxy-groups'].splice(2, 0, {
-    name: 'ニコニコ',
-    type: 'select',
-    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵')],
-  });
-  config['proxy-groups'].splice(2, 0, {
-    name: 'Spotify',
-    type: 'select',
-    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), '➡️ 直接连接'],
-  });
-  config['proxy-groups'].splice(2, 0, {
-    name: 'YouTube',
-    type: 'select',
-    proxies: ['🌐 国外流量', ...proxiesNameFilter('')],
-  });
-  config['proxy-groups'].splice(2, 0, {
-    name: 'AI',
-    type: 'select',
-    proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), ...proxiesNameFilter('🇺🇸'), '➡️ 直接连接'],
-  });
-  config.rules.unshift('RULE-SET,Niconico,ニコニコ');
-  config.rules.unshift('RULE-SET,AbemaTV,AbemaTV');
-  config.rules.unshift('RULE-SET,Bahamut,Bahamut');
-  config.rules.unshift('RULE-SET,Spotify,Spotify');
-  config.rules.unshift('RULE-SET,YouTube,YouTube');
-  config.rules.unshift('RULE-SET,TikTok,TikTok');
-  config.rules.unshift('RULE-SET,AI,AI');
-  config.rules.unshift('RULE-SET,JP,JP');
-  config.rules.unshift('RULE-SET,AdobeBan,REJECT');
-  config.rules.unshift('RULE-SET,DirectEx,DIRECT');
+  config['proxy-groups'].splice(2, 0,
+    {
+      name: 'AI',
+      type: 'select',
+      proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), ...proxiesNameFilter('🇺🇸'), '➡️ 直接连接'],
+    },
+    {
+      name: 'YouTube',
+      type: 'select',
+      proxies: ['🌐 国外流量', ...proxiesNameFilter('')],
+    },
+    {
+      name: 'Spotify',
+      type: 'select',
+      proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), '➡️ 直接连接'],
+    },
+    {
+      name: 'ニコニコ',
+      type: 'select',
+      proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵')],
+    },
+    {
+      name: 'TikTok',
+      type: 'select',
+      proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵'), ...proxiesNameFilter('🇺🇸'), '➡️ 直接连接'],
+    },
+    {
+      name: 'Bahamut',
+      type: 'select',
+      proxies: ['🌐 国外流量', ...proxiesNameFilter('🇹🇼'), '➡️ 直接连接'],
+    },
+    {
+      name: 'AbemaTV',
+      type: 'select',
+      proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵')],
+    },
+    {
+      name: 'JP',
+      type: 'select',
+      proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵')],
+    }
+  );
+  config.rules = ['RULE-SET,BlockChina,🌐 国际网站',
+    'RULE-SET,DirectEx,DIRECT',
+    'RULE-SET,AdobeBan,REJECT',
+    'RULE-SET,JP,JP',
+    'RULE-SET,AI,AI',
+    'RULE-SET,TikTok,TikTok',
+    'RULE-SET,YouTube,YouTube',
+    'RULE-SET,Spotify,Spotify',
+    'RULE-SET,Bahamut,Bahamut',
+    'RULE-SET,AbemaTV,AbemaTV',
+    'RULE-SET,Niconico,ニコニコ'].concat(config.rules)
+  Object.assign(config, {
+    'geodata-mode': true,
+    'tcp-concurrent': true
+  })
   return config
 }
 main()
