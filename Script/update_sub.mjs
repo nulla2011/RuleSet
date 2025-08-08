@@ -19,7 +19,12 @@ const data = new Promise((resolve, reject) => {
 })
 
 const main = async () => {
-  const config = parse(await data)
+  let config = parse(await data)
+  config = patchProfile(config)
+  writeFileSync('C:/users/nulla/desktop/d61638864fd63165', stringify(config), 'utf-8')
+}
+
+export const patchProfile = (config) => {
   const addRules = (domains, proxy = '🌐 国外流量', type = 'DOMAIN-SUFFIX') => {
     domains.map((domain) => config.rules.unshift(`${type.toUpperCase()},${domain},${proxy}`));
   };
@@ -46,7 +51,7 @@ const main = async () => {
     Global: {
       type: 'http',
       behavior: 'classical',
-      path: './ruleset/Global.yaml',
+      path: './RuleSet/Global.yaml',
       url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/Proxy.yaml',
       interval: 86400,
     },
@@ -88,35 +93,35 @@ const main = async () => {
     AI: {
       type: 'http',
       behavior: 'classical',
-      path: './ruleset/AI.yaml',
+      path: './RuleSet/AI.yaml',
       url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/AI.yaml',
       interval: 86400,
     },
     JP: {
       type: 'http',
       behavior: 'classical',
-      path: './ruleset/JP.yaml',
+      path: './RuleSet/JP.yaml',
       url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/JP.yaml',
       interval: 86400,
     },
     DirectEx: {
       type: 'http',
       behavior: 'classical',
-      path: './ruleset/DirectEx.yaml',
+      path: './RuleSet/DirectEx.yaml',
       url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/DirectEx.yaml',
       interval: 86400,
     },
     AdobeBan: {
       type: 'http',
       behavior: 'classical',
-      path: './ruleset/AdobeBan.yaml',
+      path: './RuleSet/AdobeBan.yaml',
       url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/Adobe_ban.yaml',
       interval: 86400,
     },
     TikTok: {
       type: 'http',
       behavior: 'classical',
-      path: './ruleset/StreamingMedia/Video/TikTok.yaml',
+      path: './RuleSet/StreamingMedia/Video/TikTok.yaml',
       url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/TikTok.yaml',
       interval: 86400,
     }
@@ -175,7 +180,6 @@ const main = async () => {
   config.rules.unshift('RULE-SET,JP,JP');
   config.rules.unshift('RULE-SET,AdobeBan,REJECT');
   config.rules.unshift('RULE-SET,DirectEx,DIRECT');
-
-  writeFileSync('C:/users/nulla/desktop/d61638864fd63165', stringify(config), 'utf-8')
+  return config
 }
 main()
