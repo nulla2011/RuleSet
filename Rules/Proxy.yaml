@@ -171,7 +171,6 @@ payload:
   - DOMAIN-SUFFIX,about.me
   - DOMAIN-SUFFIX,aboutgfw.com
   - DOMAIN-SUFFIX,abpchina.org
-  - DOMAIN-SUFFIX,abplive.com
   - DOMAIN-SUFFIX,abs.edu
   - DOMAIN-SUFFIX,acast.com
   - DOMAIN-SUFFIX,accim.org
@@ -694,7 +693,6 @@ payload:
   - DOMAIN-SUFFIX,bloombergview.com
   - DOMAIN-SUFFIX,bloomfortune.com
   - DOMAIN-SUFFIX,blubrry.com
-  - DOMAIN-SUFFIX,blueangellive.com
   - DOMAIN-SUFFIX,bmdru.com
   - DOMAIN-SUFFIX,bmfinn.com
   - DOMAIN-SUFFIX,bnbstatic.com
@@ -2087,7 +2085,6 @@ payload:
   - DOMAIN-SUFFIX,gardennetworks.com
   - DOMAIN-SUFFIX,gardennetworks.org
   - DOMAIN-SUFFIX,garena.com
-  - DOMAIN-SUFFIX,gartlive.com
   - DOMAIN-SUFFIX,gate-project.com
   - DOMAIN-SUFFIX,gate.io
   - DOMAIN-SUFFIX,gatecoin.com
@@ -2733,7 +2730,6 @@ payload:
   - DOMAIN-SUFFIX,imgur.com
   - DOMAIN-SUFFIX,imkev.com
   - DOMAIN-SUFFIX,imlive.co
-  - DOMAIN-SUFFIX,imlive.com
   - DOMAIN-SUFFIX,immigration.gov.tw
   - DOMAIN-SUFFIX,immoral.jp
   - DOMAIN-SUFFIX,imore.com
@@ -3223,7 +3219,6 @@ payload:
   - DOMAIN-SUFFIX,liujianshu.com
   - DOMAIN-SUFFIX,liuxiaobo.net
   - DOMAIN-SUFFIX,liuxiaotong.com
-  - DOMAIN-SUFFIX,live.com
   - DOMAIN-SUFFIX,live.net
   - DOMAIN-SUFFIX,livecoin.net
   - DOMAIN-SUFFIX,livedoor.jp
@@ -3971,7 +3966,6 @@ payload:
   - DOMAIN-SUFFIX,olabloga.pl
   - DOMAIN-SUFFIX,old-cat.net
   - DOMAIN-SUFFIX,olehdtv.com
-  - DOMAIN-SUFFIX,olelive.com
   - DOMAIN-SUFFIX,olevod.com
   - DOMAIN-SUFFIX,olumpo.com
   - DOMAIN-SUFFIX,olympicwatch.org
@@ -4614,7 +4608,6 @@ payload:
   - DOMAIN-SUFFIX,sagernet.org
   - DOMAIN-SUFFIX,saintyculture.com
   - DOMAIN-SUFFIX,saiq.me
-  - DOMAIN-SUFFIX,sakuralive.com
   - DOMAIN-SUFFIX,sakya.org
   - DOMAIN-SUFFIX,salvation.org.hk
   - DOMAIN-SUFFIX,samair.ru
@@ -5055,7 +5048,6 @@ payload:
   - DOMAIN-SUFFIX,summify.com
   - DOMAIN-SUFFIX,sumrando.com
   - DOMAIN-SUFFIX,sun1911.com
-  - DOMAIN-SUFFIX,sundayguardianlive.com
   - DOMAIN-SUFFIX,sunmedia.ca
   - DOMAIN-SUFFIX,suno.ai
   - DOMAIN-SUFFIX,suno.com
