@@ -113,6 +113,13 @@ export const patchProfile = (config) => {
       url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/JP.yaml',
       interval: 86400,
     },
+    AdobeBan: {
+      type: 'http',
+      behavior: 'classical',
+      path: './RuleSet/AdobeBan.yaml',
+      url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/Adobe_ban.yaml',
+      interval: 86400,
+    },
     DirectEx: {
       type: 'http',
       behavior: 'classical',
@@ -120,11 +127,11 @@ export const patchProfile = (config) => {
       url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/DirectEx.yaml',
       interval: 86400,
     },
-    AdobeBan: {
+    OtherEx: {
       type: 'http',
       behavior: 'classical',
-      path: './RuleSet/AdobeBan.yaml',
-      url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/Adobe_ban.yaml',
+      path: './RuleSet/OtherEx.yaml',
+      url: 'https://gcore.jsdelivr.net/gh/nulla2011/RuleSet@master/Rules/OtherEx.yaml',
       interval: 86400,
     },
     BlockChina: {
@@ -181,8 +188,10 @@ export const patchProfile = (config) => {
       proxies: ['🌐 国外流量', ...proxiesNameFilter('🇯🇵')],
     }
   );
-  config.rules = ['RULE-SET,BlockChina,🌐 国际网站',
+  config.rules = [
+    'RULE-SET,BlockChina,🌐 国际网站',
     'RULE-SET,DirectEx,DIRECT',
+    'RULE-SET,OtherEx,🚥 其他流量',
     'RULE-SET,AdobeBan,REJECT',
     'RULE-SET,JP,JP',
     'RULE-SET,AI,AI',
@@ -191,7 +200,8 @@ export const patchProfile = (config) => {
     'RULE-SET,Spotify,Spotify',
     'RULE-SET,Bahamut,Bahamut',
     'RULE-SET,AbemaTV,AbemaTV',
-    'RULE-SET,Niconico,ニコニコ'].concat(config.rules)
+    'RULE-SET,Niconico,ニコニコ'
+  ].concat(config.rules)
   Object.assign(config, {
     'geodata-mode': true,
     'tcp-concurrent': true
