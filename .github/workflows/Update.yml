@@ -29,11 +29,11 @@ jobs:
           mkdir Temp
           cd Temp
           
-          curl -O "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Proxy/Proxy_Classical.yaml"
+          curl -L -O "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Proxy/Proxy_Classical.yaml"
           for name in $RULE_LIST; do
-            curl -O "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/$name/$name.yaml"
+            curl -L -O "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/$name/$name.yaml"
           done
-          curl -O "https://ruleset.skk.moe/Clash/non_ip/ai.txt"
+          curl -L -O "https://ruleset.skk.moe/Clash/non_ip/ai.txt"
       - name: Patch File
         run: |
           cd Script

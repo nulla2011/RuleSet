@@ -208,4 +208,6 @@ export const patchProfile = (config) => {
   })
   return config
 }
-main()
+if (require.main === module) {
+  main()
+}
