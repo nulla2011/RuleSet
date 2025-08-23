@@ -26,7 +26,6 @@ payload:
   - DOMAIN-SUFFIX,tiktokmusic.app
   - DOMAIN-SUFFIX,tiktokv.com
   - DOMAIN-SUFFIX,tiktokv.us
-  - DOMAIN-SUFFIX,trae.ai
   - DOMAIN-SUFFIX,ttwebview.com
   - DOMAIN-KEYWORD,musical.ly
   - DOMAIN-KEYWORD,tiktok
