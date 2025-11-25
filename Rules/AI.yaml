@@ -24,6 +24,7 @@ payload:
   - DOMAIN-SUFFIX,aistudio.google.com
   - DOMAIN-SUFFIX,gemini.google.com
   - DOMAIN-SUFFIX,bard.google.com
+  - DOMAIN-SUFFIX,claude.com
   - DOMAIN-SUFFIX,sora.com
   - DOMAIN-SUFFIX,groq.com
   - DOMAIN-SUFFIX,chat.com
