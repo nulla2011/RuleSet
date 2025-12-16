@@ -29,6 +29,7 @@ payload:
   - DOMAIN-SUFFIX,groq.com
   - DOMAIN-SUFFIX,chat.com
   - DOMAIN-SUFFIX,ai.com
+  - DOMAIN,openrouter.ai
   - DOMAIN,api.jetbrains.ai
   - DOMAIN-SUFFIX,claude.ai
   - DOMAIN-SUFFIX,meta.ai
