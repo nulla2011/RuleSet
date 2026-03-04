@@ -5,19 +5,19 @@ import { stringify } from 'yaml';
 export default async () => {
   let data;
   try {
-    data = await Axios.get('https://api.cloudflare.com/client/v4/ips').then((res) => res.data);
+    data = await Axios.get('https://api.fastly.com/public-ip-list').then((res) => res.data);
   } catch (error) {
     console.error(error);
     return;
   }
   const rules = {
     payload: [
-      ...data.result['ipv4_cidrs'].map((l) => 'IP-CIDR,' + l),
-      ...data.result['ipv6_cidrs'].map((l) => 'IP-CIDR6,' + l),
+      ...data.addresses.map((l) => 'IP-CIDR,' + l),
+      ...data.ipv6_addresses.map((l) => 'IP-CIDR6,' + l),
     ],
   };
   try {
-    writeFileSync('../Rules/CloudflareIP.yaml', stringify(rules), 'utf8');
+    writeFileSync('../Rules/FastlyIP.yaml', stringify(rules), 'utf8');
   } catch (error) {
     console.error(error);
   }
