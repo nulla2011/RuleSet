@@ -42,6 +42,7 @@ jobs:
           done
           node ai_sites.mjs
           node proxy.mjs
+          node CDN
       - name: Commit & Push
         continue-on-error: true
         run: |
