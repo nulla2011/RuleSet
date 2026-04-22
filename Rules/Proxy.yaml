@@ -5,7 +5,6 @@ payload:
   - DOMAIN,cloud.oracle.com
   - DOMAIN,cvws.icloud-content.com
   - DOMAIN,developer.apple.com
-  - DOMAIN,login.microsoftonline.com
   - DOMAIN,testflight.apple.com
   - DOMAIN,voice.telephony.goog
   - DOMAIN-SUFFIX,000webhost.com
@@ -3500,11 +3499,6 @@ payload:
   - DOMAIN-SUFFIX,mgstage.com
   - DOMAIN-SUFFIX,mh4u.org
   - DOMAIN-SUFFIX,michaelmarketl.com
-  - DOMAIN-SUFFIX,microsoft-falcon.io
-  - DOMAIN-SUFFIX,microsoft.com
-  - DOMAIN-SUFFIX,microsoftapp.net
-  - DOMAIN-SUFFIX,microsoftpersonalcontent.com
-  - DOMAIN-SUFFIX,microsofttranslator.com
   - DOMAIN-SUFFIX,microvpn.com
   - DOMAIN-SUFFIX,middle-way.net
   - DOMAIN-SUFFIX,mihk.hk
