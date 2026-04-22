@@ -4,3 +4,4 @@ payload:
   - DOMAIN,tracker.hdarea.club
   - DOMAIN,cc-cdn.adobe.com
   - DOMAIN,ccmdls.adobe.com
+  - PROCESS-NAME,PhoneExperienceHost.exe
