@@ -1262,6 +1262,7 @@ payload:
   - DOMAIN-SUFFIX,crbug.com
   - DOMAIN-SUFFIX,crchina.org
   - DOMAIN-SUFFIX,crd-net.org
+  - DOMAIN-SUFFIX,creader.com
   - DOMAIN-SUFFIX,creaders.net
   - DOMAIN-SUFFIX,creadersnet.com
   - DOMAIN-SUFFIX,creativelab5.com
@@ -6842,3 +6843,4 @@ payload:
   - DOMAIN-SUFFIX,wix.com
   - DOMAIN-SUFFIX,b-cdn.net
   - DOMAIN-SUFFIX,anyrouter.top
+  - DOMAIN-SUFFIX,123av.com
