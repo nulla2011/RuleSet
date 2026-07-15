@@ -38,5 +38,3 @@ payload:
   - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
   - DOMAIN-KEYWORD,openai
   - DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
-  - DOMAIN-SUFFIX,oaiusercontent.com
-  - DOMAIN,gemini.gstatic.com
