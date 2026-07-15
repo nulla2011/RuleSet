@@ -12,9 +12,8 @@ const main = (ruleSet) => {
     try {
       rmList = readFileSync(`../Patches/Remove/${ruleSet}.yaml`, 'utf8');
     } catch (error) {
-      console.error(error);
       if (error.code === 'ENOENT') {
-        rmList = '{}';
+        rmList = '[]';
       } else {
         console.error(error);
       }
@@ -23,9 +22,8 @@ const main = (ruleSet) => {
     try {
       addList = readFileSync(`../Patches/add/${ruleSet}.yaml`, 'utf8');
     } catch (error) {
-      console.error(error);
       if (error.code === 'ENOENT') {
-        addList = '{}';
+        addList = '[]';
       } else {
         console.error(error);
       }
