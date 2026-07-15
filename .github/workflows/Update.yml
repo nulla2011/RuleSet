@@ -34,14 +34,16 @@ jobs:
             curl -L -O "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/$name/$name.yaml"
           done
           curl -L -O "https://ruleset.skk.moe/Clash/non_ip/ai.txt"
+          curl -L -O "https://ruleset.skk.moe/Clash/non_ip/reject.txt"
       - name: Patch File
         run: |
           cd Script
           for name in $RULE_LIST; do
-            node patch.mjs $name
+            node patch $name
           done
-          node ai_sites.mjs
-          node proxy.mjs
+          node skk AI
+          node skk Reject
+          node proxy
           node CDN
       - name: Commit & Push
         continue-on-error: true
