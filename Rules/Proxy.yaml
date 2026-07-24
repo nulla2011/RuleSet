@@ -4620,7 +4620,6 @@ payload:
   - DOMAIN-SUFFIX,ranyunfei.com
   - DOMAIN-SUFFIX,rapbull.net
   - DOMAIN-SUFFIX,raphael.app
-  - DOMAIN-SUFFIX,rapidgator.net
   - DOMAIN-SUFFIX,rapidmoviez.com
   - DOMAIN-SUFFIX,rapidvpn.com
   - DOMAIN-SUFFIX,rarbgprx.org
@@ -4756,7 +4755,6 @@ payload:
   - DOMAIN-SUFFIX,rustdesk.com
   - DOMAIN-SUFFIX,rusvpn.com
   - DOMAIN-SUFFIX,ruten.com.tw
-  - DOMAIN-SUFFIX,rutracker.net
   - DOMAIN-SUFFIX,rutracker.org
   - DOMAIN-SUFFIX,rutube.ru
   - DOMAIN-SUFFIX,ruyiseek.com
@@ -5631,6 +5629,7 @@ payload:
   - DOMAIN-SUFFIX,toh.info
   - DOMAIN-SUFFIX,token.im
   - DOMAIN-SUFFIX,tokenlon.im
+  - DOMAIN-SUFFIX,tokenplus.app
   - DOMAIN-SUFFIX,tokyo-247.com
   - DOMAIN-SUFFIX,tokyo-hot.com
   - DOMAIN-SUFFIX,tokyocn.com
@@ -6663,6 +6662,7 @@ payload:
   - DOMAIN-SUFFIX,zengjinyan.org
   - DOMAIN-SUFFIX,zenmate.com
   - DOMAIN-SUFFIX,zenmate.com.ru
+  - DOMAIN-SUFFIX,zenmux.ai
   - DOMAIN-SUFFIX,zerohedge.com
   - DOMAIN-SUFFIX,zeronet.io
   - DOMAIN-SUFFIX,zeutch.com
