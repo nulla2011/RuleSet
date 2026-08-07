@@ -9,6 +9,7 @@ payload:
   - DOMAIN-SUFFIX,claude.ai
   - DOMAIN-SUFFIX,claude.com
   - DOMAIN-SUFFIX,chatgpt.com
+  - DOMAIN-SUFFIX,chatgpt.site
   - DOMAIN-SUFFIX,deepmind.com
   - DOMAIN,ai.google.dev
   - DOMAIN-SUFFIX,anthropic.com
